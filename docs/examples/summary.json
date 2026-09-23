@@ -1,0 +1,50 @@
+[
+  {
+    "id": "agency",
+    "title": "Where the decision happens",
+    "seconds": 29.469,
+    "candidate_count": 5,
+    "failed_candidates": 0,
+    "candidate_model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "synthesis_model": "deepseek/deepseek-chat-v3.1",
+    "context": [
+      "Where the decision happens",
+      "Keeping uncertainty in the draft",
+      "Interaction constraints",
+      "Evaluating collaboration"
+    ],
+    "suggestion": "acceptance becomes a moment of selection rather than surrender. The assistant’s choices—what it retrieves, how it frames options—shape what feels like a natural continuation. But the decision isn’t just about picking a phrase; it’s about recognizing what alternatives were excluded and why. The real question isn’t whether I accept the suggestion, but whether I can still ask why it was offered in the first place."
+  },
+  {
+    "id": "memory",
+    "title": "The shape of a memory",
+    "seconds": 30.889,
+    "candidate_count": 5,
+    "failed_candidates": 0,
+    "candidate_model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "synthesis_model": "deepseek/deepseek-chat-v3.1",
+    "context": [
+      "Where the decision happens",
+      "Keeping uncertainty in the draft",
+      "Retrieval as a design choice",
+      "A pause worth making"
+    ],
+    "suggestion": "the system can retrieve selectively—not just what is available, but what remains useful without implying certainty. A fragment from an old draft, surfaced without its original hesitation, might steer a new sentence toward a conclusion I am not ready to draw. The risk is not forgetting, but anchoring a thought too soon. The open question is whether retrieval can preserve the gap between what is plausible and what is believed."
+  },
+  {
+    "id": "evaluation",
+    "title": "What acceptance can tell us",
+    "seconds": 10.063,
+    "candidate_count": 5,
+    "failed_candidates": 0,
+    "candidate_model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "synthesis_model": "deepseek/deepseek-chat-v3.1",
+    "context": [
+      "Evaluating collaboration",
+      "Where the decision happens",
+      "Interaction constraints",
+      "A pause worth making"
+    ],
+    "suggestion": "tracking what the model retrieves and how the writer responds afterward. Do they accept a suggestion because it resolves a gap they noticed, or because it fits a rhythm they’re in? When they reject something, is it because it contradicts their intention, or because it doesn’t match their expected style? The key is not just whether the suggestion was used, but whether the writer can point to a moment when they decided to keep or change it—and why. That decision point reveals more than a pass/fail label ever could."
+  }
+]

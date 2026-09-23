@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 670" role="img" aria-labelledby="title description">
+<title id="title">SymWrite: from a draft to a considered continuation</title>
+<desc id="description">The browser sends an explicit continuation request. The app server retrieves selected writing and approved facts, combines them with nearby draft text and style guidance, and sends bounded context to the model provider. Up to five parallel candidates can be refined in a second pass. Explore skips refinement. All alternatives and sources return for human review; only acceptance changes the draft.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#91a584" stroke-width="1.5"/></marker></defs>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#dde3d8} .muted{fill:#a0aa97} .label{font-size:11px;letter-spacing:1.3px;fill:#b2c79e} .title{font-size:19px} .body{font-size:14px} .small{font-size:12px} .node{fill:#191f18;stroke:#475640;stroke-width:1} .human{fill:#20291d;stroke:#81966f;stroke-width:1.2} .flow{fill:none;stroke:#91a584;stroke-width:1.5;marker-end:url(#arrow)} .skip{stroke-dasharray:5 5}
+</style>
+<rect width="1120" height="670" rx="10" fill="#131713"/>
+<text x="32" y="38" class="label">ONE REQUEST · SEVERAL POSSIBLE NEXT THOUGHTS</text>
+<text x="32" y="64" class="body muted">The writer chooses both when to ask and what to keep.</text>
+<text x="32" y="105" class="label">IN YOUR BROWSER</text>
+<path d="M32 117h258" stroke="#354132"/>
+<text x="322" y="105" class="label">ON THE APP SERVER</text>
+<path d="M322 117h286" stroke="#354132"/>
+<text x="640" y="105" class="label">AT THE MODEL PROVIDER</text>
+<path d="M640 117h448" stroke="#354132"/>
+<rect x="46" y="148" width="230" height="112" rx="8" class="human"/>
+<text x="64" y="179" class="title">Your draft, at the cursor</text>
+<text x="64" y="207" class="body muted">Nearby text before and after it.</text>
+<text x="64" y="228" class="body muted">You click Continue.</text>
+<rect x="346" y="148" width="238" height="136" rx="8" class="node"/>
+<text x="364" y="179" class="title">Assemble the context</text>
+<text x="364" y="207" class="body muted">Relevant excerpts + nearby</text>
+<text x="364" y="228" class="body muted">draft text + style guidance.</text>
+<text x="364" y="249" class="body muted">Up to four retrieved excerpts.</text>
+<path d="M276 197H340" class="flow"/>
+<text x="290" y="180" class="small muted">Request</text>
+<rect x="346" y="336" width="238" height="100" rx="8" class="node"/>
+<text x="364" y="367" class="title">Selected profile</text>
+<text x="364" y="394" class="body muted">Writing samples, approved facts,</text>
+<text x="364" y="415" class="body muted">and a local retrieval index.</text>
+<path d="M465 336V291" class="flow"/>
+<text x="481" y="318" class="small muted">Retrieve</text>
+<rect x="666" y="148" width="398" height="212" rx="8" class="node"/>
+<text x="684" y="179" class="title">Explore up to five directions</text>
+<text x="684" y="204" class="body muted">Parallel calls · same context, different approach</text>
+<circle cx="692" cy="227" r="8" fill="#35482b"/>
+<text x="692" y="231" class="small" text-anchor="middle">1</text>
+<text x="710" y="231" class="body">Implication</text>
+<circle cx="692" cy="252" r="8" fill="#35482b"/>
+<text x="692" y="256" class="small" text-anchor="middle">2</text>
+<text x="710" y="256" class="body">Mechanism</text>
+<circle cx="692" cy="277" r="8" fill="#35482b"/>
+<text x="692" y="281" class="small" text-anchor="middle">3</text>
+<text x="710" y="281" class="body">Assumption</text>
+<circle cx="692" cy="302" r="8" fill="#35482b"/>
+<text x="692" y="306" class="small" text-anchor="middle">4</text>
+<text x="710" y="306" class="body">Connection</text>
+<circle cx="692" cy="327" r="8" fill="#35482b"/>
+<text x="692" y="331" class="small" text-anchor="middle">5</text>
+<text x="710" y="331" class="body">Economy</text>
+<path d="M584 197H660" class="flow"/>
+<text x="602" y="177" class="small muted">Context</text>
+<rect x="666" y="415" width="398" height="92" rx="8" class="node"/>
+<text x="684" y="446" class="title">Optional refinement</text>
+<text x="684" y="473" class="body muted">A second model synthesizes the candidates.</text>
+<text x="684" y="494" class="body muted">It receives the same source context.</text>
+<path d="M865 360V409" class="flow"/>
+<text x="881" y="391" class="small muted">Refine</text>
+<rect x="46" y="516" width="230" height="106" rx="8" class="human"/>
+<text x="64" y="547" class="title">Compare and decide</text>
+<text x="64" y="575" class="body muted">Candidates, refinement, sources.</text>
+<text x="64" y="596" class="body muted">Accept, edit, undo, or dismiss.</text>
+<path d="M865 507V565H283" class="flow"/>
+<text x="445" y="550" class="body muted">Suggestions + source excerpts</text>
+<path d="M1064 307H1084V609H865V572" class="flow skip"/>
+<text x="881" y="637" class="small muted">Explore skips the second pass</text>
+<path d="M46 568H24V237H40" class="flow"/>
+<text x="46" y="472" class="small muted">Accept → insert at the cursor</text>
+<text x="46" y="490" class="small muted">Dismiss → keep the draft</text>
+<text x="346" y="637" class="small muted">Original candidates remain available in both modes.</text>
+</svg>

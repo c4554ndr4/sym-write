@@ -1,0 +1,11 @@
+{
+  "name": "symwrite-browser-checks",
+  "private": true,
+  "scripts": {
+    "test:browser": "node tests/browser.cjs",
+    "test:access-browser": "node tests/access-browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.55.1"
+  }
+}

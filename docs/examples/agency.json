@@ -1,0 +1,96 @@
+{
+  "captured_at": "2026-09-23T18:53:27.475Z",
+  "profile": "Research notebook",
+  "synthetic": true,
+  "title": "Where the decision happens",
+  "input": "I keep returning to a small question about writing assistants: at what point does a continuation become a decision?\n\nThe obvious answer is when I accept it. But that leaves out the choices already made on my behalf: which earlier passages were retrieved, which possibilities were generated, and which one was presented as the natural next thought.\n\nI want to study the review step as part of the architecture. If the writer can see the sources and compare several directions, then",
+  "request": {
+    "text": "I keep returning to a small question about writing assistants: at what point does a continuation become a decision?\n\nThe obvious answer is when I accept it. But that leaves out the choices already made on my behalf: which earlier passages were retrieved, which possibilities were generated, and which one was presented as the natural next thought.\n\nI want to study the review step as part of the architecture. If the writer can see the sources and compare several directions, then",
+    "cursor": 480,
+    "request_id": "06057ac6-4033-4698-9083-d9a4f401b895",
+    "profile_version": "448a0c61a66d8f645005d0c036a2fb04a20f2ecdf5a03fcd89de947c93d2ec8c",
+    "length": "paragraph",
+    "mode": "refine"
+  },
+  "response": {
+    "request_id": "06057ac6-4033-4698-9083-d9a4f401b895",
+    "cursor": 480,
+    "suggestions": [
+      {
+        "label": "Refined",
+        "text": "acceptance becomes a moment of selection rather than surrender. The assistant’s choices—what it retrieves, how it frames options—shape what feels like a natural continuation. But the decision isn’t just about picking a phrase; it’s about recognizing what alternatives were excluded and why. The real question isn’t whether I accept the suggestion, but whether I can still ask why it was offered in the first place.",
+        "stage": "synthesis"
+      },
+      {
+        "label": "Candidate 1",
+        "text": "the review step becomes a space where the writer reclaims agency—not just over the next word, but over the assumptions embedded in the suggestion. Without visibility into the reasoning behind a continuation, acceptance risks becoming passive. The assistant’s role isn’t to deliver a ready-made thought, but to make the writer’s own reasoning more visible. The open question remains: can a system support this kind of reflection without making it feel like a burden, or worse, replacing the act of thinking with the illusion of it?",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 2",
+        "text": "I want to study the review step as part of the architecture. If the writer can see the sources and compare several directions, then the act of acceptance becomes a moment of selection rather than surrender. The assistant’s choices—what it retrieves, how it frames options—shape what feels like a natural continuation. But the decision isn’t just about picking a phrase; it’s about recognizing what alternatives were excluded and why. The real question isn’t whether I accept the suggestion, but whether I can still ask why it was offered in the first place.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 3",
+        "text": "I’m beginning to suspect that the moment of acceptance isn’t the only decision point—it’s the most visible one. The real choices happen before the suggestion appears: which memories surface, which tone feels right, which path seems to lead forward. I don’t know yet whether preserving the trace of those pre-acceptance decisions matters more than the final word. What’s clear is that the assistant’s role isn’t just to propose, but to leave room for the writer to notice where the idea began, and where it might still go.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 4",
+        "text": "acceptance isn’t just a yes or no—it becomes a moment of negotiation between what’s suggested and what’s intended. The real decision may not be in choosing a word, but in deciding whether to treat a suggestion as a path worth exploring or a prompt to reconsider the direction already taken. This raises a question: can a system preserve the weight of uncertainty while still helping shape a line of thought? The goal isn’t to minimize friction, but to make it visible.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 5",
+        "text": "the review step becomes a space where the writer can weigh not just the words, but the assumptions behind them. The assistant’s choices—what it retrieves, how it frames alternatives—shape what feels like a natural next step. I don’t yet know whether preserving those choices visibly changes how often a writer questions, revises, or reorients their thought. That remains an open question. What I do see is that when the path forward is transparent, the act of acceptance carries more weight.",
+        "stage": "candidate"
+      }
+    ],
+    "context": [
+      {
+        "id": "agency:1",
+        "source_id": "agency",
+        "title": "Where the decision happens",
+        "kind": "writing",
+        "text": "A writing assistant makes choices before the writer accepts a word. It chooses which memories seem relevant, which continuations are worth considering, and which ambiguities to resolve. I want those choices to remain available for inspection. Acceptance is meaningful only if the writer can understand what they are accepting and can still take the sentence somewhere else.",
+        "score": 0.832
+      },
+      {
+        "id": "uncertainty:1",
+        "source_id": "uncertainty",
+        "title": "Keeping uncertainty in the draft",
+        "kind": "writing",
+        "text": "I am interested in the distance between a plausible sentence and a justified one. A smooth continuation can quietly turn a tentative idea into a claim. Preserving uncertainty is therefore part of preserving voice. The question is whether an assistant can make a thought easier to express without deciding what its author believes.",
+        "score": 0.777
+      },
+      {
+        "id": "control:1",
+        "source_id": "control",
+        "title": "Interaction constraints",
+        "kind": "fact",
+        "text": "Suggestions are requested explicitly. The writer chooses whether to accept, edit, or dismiss them. A suggestion must not replace existing text after the cursor, and generation must not prevent the writer from continuing to type.",
+        "score": 0.763
+      },
+      {
+        "id": "evaluation:1",
+        "source_id": "evaluation",
+        "title": "Evaluating collaboration",
+        "kind": "writing",
+        "text": "Acceptance rate is an incomplete measure of a writing assistant. A suggestion can be easy to accept because it is useful, or because it arrives fluently enough that questioning it feels like extra work. I would pair acceptance with the edits people make afterward, the claims they reject, and whether they can explain why a source was retrieved. These are proposed measures, not results from a completed study.",
+        "score": 0.754
+      }
+    ],
+    "candidate_count": 5,
+    "failed_candidates": 0,
+    "elapsed_ms": 29469,
+    "synthesis_status": "complete",
+    "retrieval": "semantic",
+    "models": {
+      "candidate": "qwen/qwen3-30b-a3b-instruct-2507",
+      "synthesis": "deepseek/deepseek-chat-v3.1"
+    },
+    "warning": null
+  },
+  "displayed_suggestion": 0
+}

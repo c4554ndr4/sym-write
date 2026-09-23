@@ -1,0 +1,96 @@
+{
+  "captured_at": "2026-09-23T18:55:37.456Z",
+  "profile": "Research notebook",
+  "synthetic": true,
+  "title": "What acceptance can tell us",
+  "input": "A high acceptance rate would be easy to report and difficult to interpret.\n\nA writer might accept a suggestion because it expresses something they already meant. They might also accept it because it is fluent, arrives at a convenient moment, or makes an unresolved question sound settled. Those interactions look similar in a log, but they describe rather different relationships with the tool.\n\nI would begin an evaluation by",
+  "request": {
+    "text": "A high acceptance rate would be easy to report and difficult to interpret.\n\nA writer might accept a suggestion because it expresses something they already meant. They might also accept it because it is fluent, arrives at a convenient moment, or makes an unresolved question sound settled. Those interactions look similar in a log, but they describe rather different relationships with the tool.\n\nI would begin an evaluation by",
+    "cursor": 426,
+    "request_id": "7ffa5b1a-0a5b-4f10-b2f3-2aeadfab3e26",
+    "profile_version": "448a0c61a66d8f645005d0c036a2fb04a20f2ecdf5a03fcd89de947c93d2ec8c",
+    "length": "paragraph",
+    "mode": "refine"
+  },
+  "response": {
+    "request_id": "7ffa5b1a-0a5b-4f10-b2f3-2aeadfab3e26",
+    "cursor": 426,
+    "suggestions": [
+      {
+        "label": "Refined",
+        "text": "examining not just whether a suggestion was accepted, but how the writer engages with it afterward—whether they revise it, reject it, or leave it unchanged. A suggestion might be accepted without scrutiny, simply because it feels right or saves effort. Without access to the writer’s reasoning or the path they took after the suggestion, acceptance alone tells us little about intent or understanding. The real question remains: can the writer still steer the sentence elsewhere, and do they know why a suggestion was made?",
+        "stage": "synthesis"
+      },
+      {
+        "label": "Candidate 1",
+        "text": "tracking not just what suggestions are accepted, but how the writer reworks them afterward—whether they rephrase, discard, or retain the original. A suggestion that is accepted but later revised reveals a different dynamic than one that is fully adopted. This shift in direction, or the absence of it, might indicate whether the writer is co-authoring or merely signing off. The key difference lies not in acceptance alone, but in the subsequent agency the writer exerts over the evolving text.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 2",
+        "text": "tracking what the model retrieves and how the writer responds afterward. Do they accept a suggestion because it resolves a gap they noticed, or because it fits a rhythm they’re in? When they reject something, is it because it contradicts their intention, or because it doesn’t match their expected style? The key is not just whether the suggestion was used, but whether the writer can point to a moment when they decided to keep or change it—and why. That decision point reveals more than a pass/fail label ever could.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 3",
+        "text": "examining the assumption that acceptance implies alignment with the writer’s intent. The act of accepting a suggestion may reflect not clarity of purpose, but the cognitive ease of a smooth transition. If the model resolves ambiguity before the writer can identify it, acceptance might mask uncertainty rather than resolve it. This raises an open question: under what conditions does acceptance indicate trust in the tool’s judgment, versus reliance on its fluency? A finding would be that acceptance rates alone cannot distinguish between these cases.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 4",
+        "text": "tracking not just whether a suggestion was accepted, but what changed in the text afterward—whether the writer refined it, rejected it with a new direction, or left it as is. Acceptance alone doesn’t distinguish between alignment and deference. The real question is whether the tool supports the writer’s control over meaning, not just speed or surface-level agreement. That distinction remains open.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 5",
+        "text": "examining not just whether a suggestion was accepted, but how the writer engages with it afterward—whether they revise it, reject it, or leave it unchanged. A suggestion might be accepted without scrutiny, simply because it feels right or saves effort. Without access to the writer’s reasoning or the path they took after the suggestion, acceptance alone tells us little about intent or understanding. The real question remains: can the writer still steer the sentence elsewhere, and do they know why a suggestion was made?",
+        "stage": "candidate"
+      }
+    ],
+    "context": [
+      {
+        "id": "evaluation:1",
+        "source_id": "evaluation",
+        "title": "Evaluating collaboration",
+        "kind": "writing",
+        "text": "Acceptance rate is an incomplete measure of a writing assistant. A suggestion can be easy to accept because it is useful, or because it arrives fluently enough that questioning it feels like extra work. I would pair acceptance with the edits people make afterward, the claims they reject, and whether they can explain why a source was retrieved. These are proposed measures, not results from a completed study.",
+        "score": 0.896
+      },
+      {
+        "id": "agency:1",
+        "source_id": "agency",
+        "title": "Where the decision happens",
+        "kind": "writing",
+        "text": "A writing assistant makes choices before the writer accepts a word. It chooses which memories seem relevant, which continuations are worth considering, and which ambiguities to resolve. I want those choices to remain available for inspection. Acceptance is meaningful only if the writer can understand what they are accepting and can still take the sentence somewhere else.",
+        "score": 0.83
+      },
+      {
+        "id": "control:1",
+        "source_id": "control",
+        "title": "Interaction constraints",
+        "kind": "fact",
+        "text": "Suggestions are requested explicitly. The writer chooses whether to accept, edit, or dismiss them. A suggestion must not replace existing text after the cursor, and generation must not prevent the writer from continuing to type.",
+        "score": 0.772
+      },
+      {
+        "id": "latency:1",
+        "source_id": "latency",
+        "title": "A pause worth making",
+        "kind": "writing",
+        "text": "A pause in a writing session is not interchangeable with a pause in a search result. It interrupts a thought that may not yet have words. Parallel candidates let the model explore several directions during one wait, but the writer still pays for the slowest request and the synthesis step. I want speed to support deliberation rather than make acceptance automatic.",
+        "score": 0.723
+      }
+    ],
+    "candidate_count": 5,
+    "failed_candidates": 0,
+    "elapsed_ms": 10063,
+    "synthesis_status": "complete",
+    "retrieval": "semantic",
+    "models": {
+      "candidate": "qwen/qwen3-30b-a3b-instruct-2507",
+      "synthesis": "deepseek/deepseek-chat-v3.1"
+    },
+    "warning": null
+  },
+  "displayed_suggestion": 2
+}

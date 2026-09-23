@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 1210" role="img" aria-labelledby="title description">
+<title id="title">SymWrite: from a draft to a considered continuation</title>
+<desc id="description">Vertical version of the SymWrite pipeline: your draft, selected profile retrieval on the app server, five parallel model candidates, optional refinement, and writer review. Explore bypasses refinement. Acceptance returns the chosen text to the draft.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#91a584" stroke-width="1.5"/></marker></defs>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#dde3d8} .muted{fill:#a0aa97} .label{font-size:11px;letter-spacing:1.3px;fill:#b2c79e} .title{font-size:19px} .body{font-size:14px} .small{font-size:12px} .node{fill:#191f18;stroke:#475640;stroke-width:1} .human{fill:#20291d;stroke:#81966f;stroke-width:1.2} .flow{fill:none;stroke:#91a584;stroke-width:1.5;marker-end:url(#arrow)} .skip{stroke-dasharray:5 5}
+</style>
+<rect width="440" height="1210" rx="10" fill="#131713"/>
+<style>.label{font-size:13px}.title{font-size:22px}.body{font-size:17px}.small{font-size:15px}</style>
+<text x="24" y="34" class="label">ONE REQUEST · SEVERAL DIRECTIONS</text>
+<text x="24" y="82" class="label">IN YOUR BROWSER</text>
+<rect x="24" y="102" width="392" height="105" rx="8" class="human"/>
+<text x="44" y="136" class="title">Your draft, at the cursor</text>
+<text x="44" y="165" class="body muted">You click Continue.</text>
+<text x="44" y="189" class="body muted">Nearby text frames the next thought.</text>
+<path d="M220 207V264" class="flow"/>
+<text x="24" y="249" class="label">ON THE APP SERVER</text>
+<rect x="24" y="272" width="392" height="145" rx="8" class="node"/>
+<text x="44" y="307" class="title">Retrieve and assemble context</text>
+<text x="44" y="337" class="body muted">Up to four excerpts from the profile’s</text>
+<text x="44" y="363" class="body muted">writing samples and approved facts,</text>
+<text x="44" y="389" class="body muted">plus nearby draft text and style guidance.</text>
+<path d="M220 417V475" class="flow"/>
+<text x="24" y="461" class="label">AT THE MODEL PROVIDER</text>
+<rect x="24" y="483" width="368" height="244" rx="8" class="node"/>
+<text x="44" y="519" class="title">Explore up to five directions</text>
+<text x="44" y="548" class="small muted">Parallel calls, each with the same context.</text>
+<circle cx="53" cy="574" r="11" fill="#35482b"/>
+<text x="53" y="579" class="small" text-anchor="middle">1</text>
+<text x="77" y="579" class="body">Implication</text>
+<circle cx="53" cy="603" r="11" fill="#35482b"/>
+<text x="53" y="608" class="small" text-anchor="middle">2</text>
+<text x="77" y="608" class="body">Mechanism</text>
+<circle cx="53" cy="632" r="11" fill="#35482b"/>
+<text x="53" y="637" class="small" text-anchor="middle">3</text>
+<text x="77" y="637" class="body">Assumption</text>
+<circle cx="53" cy="661" r="11" fill="#35482b"/>
+<text x="53" y="666" class="small" text-anchor="middle">4</text>
+<text x="77" y="666" class="body">Connection</text>
+<circle cx="53" cy="690" r="11" fill="#35482b"/>
+<text x="53" y="695" class="small" text-anchor="middle">5</text>
+<text x="77" y="695" class="body">Economy</text>
+<path d="M208 727V775" class="flow"/>
+<text x="224" y="757" class="small muted">Refine</text>
+<rect x="24" y="784" width="368" height="108" rx="8" class="node"/>
+<text x="44" y="820" class="title">Optional refinement</text>
+<text x="44" y="849" class="body muted">A second model combines useful ideas</text>
+<text x="44" y="873" class="body muted">with the same source context.</text>
+<path d="M208 892V991" class="flow"/>
+<text x="24" y="940" class="label">BACK TO THE WRITER</text>
+<text x="24" y="970" class="small muted">Suggestions + source excerpts</text>
+<path d="M392 658H416V1024H399" class="flow skip"/>
+<rect x="24" y="1000" width="368" height="115" rx="8" class="human"/>
+<text x="44" y="1037" class="title">You compare and decide</text>
+<text x="44" y="1067" class="body muted">Accept and edit, undo, or dismiss.</text>
+<text x="44" y="1091" class="body muted">Only acceptance changes the draft.</text>
+<text x="24" y="1151" class="small muted">Explore skips the second pass.</text>
+<text x="24" y="1177" class="small muted">Original candidates remain available.</text>
+</svg>

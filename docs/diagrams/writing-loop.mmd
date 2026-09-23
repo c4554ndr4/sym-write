@@ -1,0 +1,17 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'Arial', 'fontSize': '16px', 'lineColor': '#78836f', 'edgeLabelBackground': '#faf9f5', 'clusterBkg': '#f6f5ef', 'clusterBorder': '#c8cfc0', 'primaryTextColor': '#2d382c'}}}%%
+flowchart TB
+    Draft["A draft at the cursor"] --> Retrieve["Retrieve relevant passages<br/>and approved facts"]
+    Memory[("Selected writing<br/>and local memory")] --> Retrieve
+    Retrieve --> Explore["Explore five possible<br/>continuations in parallel"]
+    Explore --> Refine["Refine the useful ideas<br/>into one continuation"]
+    Explore --> Review["Compare the suggestions<br/>and inspect their context"]
+    Refine --> Review
+    Review --> Choice{"The writer decides"}
+    Choice -->|Accept and edit| Draft
+    Choice -->|Dismiss| Keep["Keep the existing draft"]
+    classDef paper fill:#fdfcf8,stroke:#bbc3b0,color:#2d382c;
+    classDef green fill:#e4eadc,stroke:#91a17f,color:#33452a;
+    classDef rust fill:#f2e4db,stroke:#ad6a4b,color:#723c24;
+    class Draft,Memory,Retrieve,Keep paper;
+    class Explore,Refine green;
+    class Review,Choice rust;

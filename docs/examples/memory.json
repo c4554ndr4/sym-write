@@ -1,0 +1,96 @@
+{
+  "captured_at": "2026-09-23T18:55:27.217Z",
+  "profile": "Research notebook",
+  "synthetic": true,
+  "title": "The shape of a memory",
+  "input": "I do not want a writing assistant to treat everything I have written as equally relevant to what I am trying to say now.\n\nA notebook contains abandoned hypotheses, observations that only made sense in their original setting, and sentences whose confidence I would no longer defend. Retrieving a passage preserves its words. It does not necessarily preserve those qualifications.\n\nThe useful question is not simply whether the system can remember more. It is whether",
+  "request": {
+    "text": "I do not want a writing assistant to treat everything I have written as equally relevant to what I am trying to say now.\n\nA notebook contains abandoned hypotheses, observations that only made sense in their original setting, and sentences whose confidence I would no longer defend. Retrieving a passage preserves its words. It does not necessarily preserve those qualifications.\n\nThe useful question is not simply whether the system can remember more. It is whether",
+    "cursor": 465,
+    "request_id": "50209bfe-7fea-4caf-8e93-d2bac5899522",
+    "profile_version": "448a0c61a66d8f645005d0c036a2fb04a20f2ecdf5a03fcd89de947c93d2ec8c",
+    "length": "paragraph",
+    "mode": "refine"
+  },
+  "response": {
+    "request_id": "50209bfe-7fea-4caf-8e93-d2bac5899522",
+    "cursor": 465,
+    "suggestions": [
+      {
+        "label": "Refined",
+        "text": "the system can retrieve selectively—not just what is available, but what remains useful without implying certainty. A fragment from an old draft, surfaced without its original hesitation, might steer a new sentence toward a conclusion I am not ready to draw. The risk is not forgetting, but anchoring a thought too soon. The open question is whether retrieval can preserve the gap between what is plausible and what is believed.",
+        "stage": "synthesis"
+      },
+      {
+        "label": "Candidate 1",
+        "text": "it can distinguish between what is retrievable and what is worth retrieving in the moment. Not all past writing should guide the next sentence. Some fragments, once helpful, now mislead if they surface without context. The assistant’s role isn’t to preserve everything but to help me notice which pieces still belong. The risk isn’t forgetting—it’s mistaking a remnant for a direction.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 2",
+        "text": "The mechanism operates through selective retrieval: when I write, the system might surface prior sentences, even if they were provisional or context-bound. Those fragments carry weight not because they’re accurate, but because they’re present. The risk is that a past phrasing, stripped of its original hesitation, could anchor the current sentence too firmly. The open question is whether the system can surface only the most relevant traces—without implying they’re authoritative—so I can still question or redirect the thought, not just accept it.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 3",
+        "text": "The assumption that more memory improves writing may overlook how retrieval shapes attention. If the assistant surfaces older drafts without marking their context, it risks treating provisional thoughts as current commitments. That’s not just a technical limitation—it’s a shift in authorship. The boundary between support and substitution blurs when past fragments are presented as equally valid starting points. The open question remains: can a system surface relevant history without implying it’s authoritative?",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 4",
+        "text": "the system can remember selectively—choosing not just what to retrieve, but what to leave out. A memory that includes every prior phrase risks flattening the writer’s evolving stance into a single, coherent narrative, even when the author is still uncertain. The real challenge lies in preserving the gap between what feels plausible and what is believed. If retrieval supports that gap rather than closing it, then it becomes a tool for thinking, not just writing.",
+        "stage": "candidate"
+      },
+      {
+        "label": "Candidate 5",
+        "text": "it is possible to retrieve only what matters without collapsing the space of alternatives. Some memories may feel urgent because they are recent, not because they are relevant. A model that retrieves too broadly risks making a line of thought seem more settled than it is. The risk is not just inaccuracy, but in the quiet erosion of doubt. If the assistant chooses which past sentences to surface, it shapes what the writer can reconsider. That choice should be visible.",
+        "stage": "candidate"
+      }
+    ],
+    "context": [
+      {
+        "id": "agency:1",
+        "source_id": "agency",
+        "title": "Where the decision happens",
+        "kind": "writing",
+        "text": "A writing assistant makes choices before the writer accepts a word. It chooses which memories seem relevant, which continuations are worth considering, and which ambiguities to resolve. I want those choices to remain available for inspection. Acceptance is meaningful only if the writer can understand what they are accepting and can still take the sentence somewhere else.",
+        "score": 0.813
+      },
+      {
+        "id": "uncertainty:1",
+        "source_id": "uncertainty",
+        "title": "Keeping uncertainty in the draft",
+        "kind": "writing",
+        "text": "I am interested in the distance between a plausible sentence and a justified one. A smooth continuation can quietly turn a tentative idea into a claim. Preserving uncertainty is therefore part of preserving voice. The question is whether an assistant can make a thought easier to express without deciding what its author believes.",
+        "score": 0.79
+      },
+      {
+        "id": "memory:1",
+        "source_id": "memory",
+        "title": "Retrieval as a design choice",
+        "kind": "writing",
+        "text": "Retrieval is a decision about which parts of a person's past are allowed to shape their present work. More context is not automatically better context. A relevant passage may help a model follow a line of thought; an unrelated biographical detail may make the same suggestion feel intrusive. I would rather inspect a small set of sources than treat a growing archive as a complete representation of its author.",
+        "score": 0.779
+      },
+      {
+        "id": "latency:1",
+        "source_id": "latency",
+        "title": "A pause worth making",
+        "kind": "writing",
+        "text": "A pause in a writing session is not interchangeable with a pause in a search result. It interrupts a thought that may not yet have words. Parallel candidates let the model explore several directions during one wait, but the writer still pays for the slowest request and the synthesis step. I want speed to support deliberation rather than make acceptance automatic.",
+        "score": 0.762
+      }
+    ],
+    "candidate_count": 5,
+    "failed_candidates": 0,
+    "elapsed_ms": 30889,
+    "synthesis_status": "complete",
+    "retrieval": "semantic",
+    "models": {
+      "candidate": "qwen/qwen3-30b-a3b-instruct-2507",
+      "synthesis": "deepseek/deepseek-chat-v3.1"
+    },
+    "warning": null
+  },
+  "displayed_suggestion": 0
+}

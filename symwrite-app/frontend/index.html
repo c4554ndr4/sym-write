@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101410" />
+    <title>SymWrite</title>
+    <link
+      rel="preload"
+      href="/static/fonts/eb-garamond-regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="topbar">
+        <a class="wordmark" href="#writing" aria-label="SymWrite home"
+          >SymWrite</a
+        >
+        <nav class="nav-links" aria-label="Notebook">
+          <details id="documents-menu" class="nav-menu" data-nav-menu>
+            <summary>Documents</summary>
+            <div class="menu-panel">
+              <nav id="documents" aria-label="Drafts"></nav>
+            </div>
+          </details>
+          <details id="examples-menu" class="nav-menu" data-nav-menu hidden>
+            <summary>Examples</summary>
+            <div id="example-list" class="menu-panel"></div>
+          </details>
+          <details class="nav-menu profile-details" data-nav-menu>
+            <summary>
+              <span id="connection-dot" class="dot"></span>Profile
+            </summary>
+            <div class="menu-panel profile-panel">
+              <strong id="profile-name">Connecting…</strong>
+              <span id="profile-label" class="muted"></span>
+              <span id="connection-status" class="muted" role="status"
+                >Starting</span
+              >
+              <p id="profile-style"></p>
+              <div id="source-library"></div>
+              <p id="model-info" class="muted"></p>
+              <p class="local-note">
+                Drafts save in this browser. Requested suggestions send selected
+                writing to the model provider. Sign-in unlocks suggestions;
+                drafts remain in this browser, including after sign-out.
+              </p>
+            </div>
+          </details>
+          <button
+            id="new-note"
+            disabled
+            class="icon-button"
+            title="New note"
+            aria-label="New note"
+          >
+            +
+          </button>
+        </nav>
+        <div class="account-controls">
+          <span id="allowance" class="muted" role="status">Connecting…</span>
+          <button id="account" class="outline-button" disabled>Sign in</button>
+        </div>
+      </div>
+    </header>
+    <main class="workspace">
+      <div class="view-tabs" role="tablist" aria-label="SymWrite views">
+        <button
+          id="writing-tab"
+          role="tab"
+          aria-selected="true"
+          aria-controls="writing-panel"
+        >
+          Writing
+        </button>
+        <button
+          id="about-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="about-panel"
+          tabindex="-1"
+        >
+          What is this?
+        </button>
+      </div>
+      <section
+        id="writing-panel"
+        role="tabpanel"
+        aria-labelledby="writing-tab"
+        tabindex="0"
+      >
+        <header class="document-heading">
+          <label class="sr-only" for="title">Document title</label>
+          <input
+            id="title"
+            disabled
+            maxlength="180"
+            placeholder="Untitled"
+            autocomplete="off"
+          />
+          <div class="document-meta">
+            <span id="word-count">0 words</span>
+            <span id="document-number" class="sr-only">Draft</span>
+            <span id="save-status" role="status" title="Saved in this browser"
+              >Loading…</span
+            >
+          </div>
+        </header>
+        <div class="writing-frame">
+          <section class="notebook" aria-label="Writing area">
+            <div class="paper">
+              <label class="sr-only" for="editor">Draft</label>
+              <textarea
+                id="editor"
+                disabled
+                spellcheck="true"
+                placeholder="Write…"
+              ></textarea>
+              <div id="accepted-note" role="status" class="accepted-note"></div>
+            </div>
+            <footer class="writing-controls">
+              <div class="options">
+                <label
+                  ><span class="sr-only">Length</span
+                  ><select id="length">
+                    <option value="paragraph">Paragraph</option>
+                    <option value="sentence">Sentence</option>
+                  </select></label
+                >
+                <label
+                  ><span class="sr-only">Approach</span
+                  ><select id="mode">
+                    <option value="refine">Refine</option>
+                    <option value="explore">Explore</option>
+                  </select></label
+                >
+              </div>
+              <button
+                id="generate"
+                class="primary"
+                disabled
+                title="Continue (⌘ / Ctrl + Enter)"
+              >
+                Continue <span aria-hidden="true">↗</span>
+              </button>
+            </footer>
+          </section>
+          <aside class="collaborator" aria-label="Writing suggestions">
+            <div class="panel-heading">
+              <h2>
+                Continuations
+                <span id="branch-count" class="branch-count"></span>
+              </h2>
+              <span id="request-state" class="sr-only" role="status"
+                >Ready</span
+              >
+              <button
+                id="export"
+                disabled
+                class="outline-button"
+                title="Export this draft as Markdown"
+              >
+                Export <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <div class="continuation-body">
+              <div id="idle" aria-hidden="true">
+                <svg viewBox="0 0 64 64" width="64" height="64" fill="none">
+                  <path
+                    d="M17 15v34M17 32h12c12 0 18-7 18-17M29 32c12 0 18 7 18 17"
+                  />
+                  <circle cx="17" cy="12" r="4" />
+                  <circle cx="17" cy="52" r="4" />
+                  <circle cx="47" cy="12" r="4" />
+                  <circle cx="47" cy="52" r="4" />
+                </svg>
+              </div>
+              <section
+                id="trial-gate"
+                class="trial-gate"
+                hidden
+                aria-label="Sign in to continue"
+              >
+                <h3>Trial complete</h3>
+                <p id="trial-message"></p>
+                <button id="sign-in" class="primary">
+                  Continue with Google
+                </button>
+              </section>
+              <div id="verification" hidden></div>
+              <div id="request-progress" hidden>
+                <div class="progress-line"></div>
+                <p id="progress-copy" role="status">Writing…</p>
+                <button id="cancel" class="text-button">Cancel</button>
+              </div>
+              <p id="error" class="error" role="alert" hidden></p>
+              <section id="result" hidden aria-label="Suggestion review">
+                <div
+                  id="suggestion-tabs"
+                  class="continuation-cards"
+                  role="group"
+                  aria-label="Choose a suggestion"
+                ></div>
+                <div class="review-actions">
+                  <button id="accept" class="primary">
+                    Accept <span aria-hidden="true">↙</span></button
+                  ><button id="dismiss" class="text-button">Dismiss</button>
+                </div>
+                <p id="warning" class="warning" hidden></p>
+                <details class="context-section">
+                  <summary class="context-heading">
+                    <span>Sources</span><span id="context-count"></span>
+                  </summary>
+                  <p id="generation-note" class="muted"></p>
+                  <div id="context-list"></div>
+                </details>
+              </section>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section
+        id="about-panel"
+        class="about-panel"
+        role="tabpanel"
+        aria-labelledby="about-tab"
+        tabindex="0"
+        hidden
+      >
+        <header class="about-intro">
+          <p class="about-eyebrow">SymWrite / a writing experiment</p>
+          <h1>What happens between a thought and its next sentence?</h1>
+          <p>
+            I’m interested in what it would mean for a writing assistant to be
+            aligned with a particular person. A model can learn the texture of
+            someone’s prose and still miss what they are trying to say. The
+            interesting problem is how to give it useful context while leaving
+            the direction of the thought open to the writer.
+          </p>
+          <p>
+            SymWrite is a small experiment in that direction. It brings together
+            memory, several possible continuations, and a second pass at
+            synthesis. Each of these stages makes a choice. I want the writer to
+            be able to see enough of those choices to disagree with them.
+          </p>
+        </header>
+        <figure class="pipeline-figure">
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="/static/diagrams/pipeline-mobile.svg"
+            />
+            <img
+              src="/static/diagrams/pipeline.svg"
+              width="1120"
+              height="670"
+              alt="SymWrite pipeline. The writer requests a continuation at the cursor. The app server retrieves relevant passages from the selected profile and combines them with nearby draft text and style guidance. A model generates up to five directions in parallel. Refine adds a second model pass using the same context; Explore skips that pass. Original candidates, any refinement, and source excerpts return to the writer. Only acceptance inserts text into the draft."
+            />
+          </picture>
+          <figcaption>
+            One request through the pipeline. Explore skips refinement; the
+            original candidates remain available in either mode.
+          </figcaption>
+        </figure>
+        <div class="about-steps">
+          <section>
+            <span class="step-number" aria-hidden="true">01</span>
+            <h2>Choose what to remember</h2>
+            <p>
+              When you request a continuation, SymWrite searches the writing
+              samples and approved facts in the selected profile. It retrieves
+              up to four relevant excerpts, then combines them with style
+              guidance and the text around your cursor. This is retrieval and
+              prompting; the app does not train a new model on your writing.
+            </p>
+          </section>
+          <section>
+            <span class="step-number" aria-hidden="true">02</span>
+            <h2>Explore, then synthesize</h2>
+            <p>
+              The candidate model tries up to five directions in parallel: an
+              implication, a concrete mechanism, an assumption, a connection,
+              and a more economical continuation. In Refine mode, a second model
+              draws on the candidates and the same source context to propose one
+              continuation. Explore stops before that second pass.
+            </p>
+          </section>
+          <section>
+            <span class="step-number" aria-hidden="true">03</span>
+            <h2>Return the choice to the writer</h2>
+            <p>
+              You can compare the candidates with the refinement and inspect the
+              excerpts under Sources. Nothing enters the draft until you accept
+              it. You can edit the result, undo the insertion, or dismiss the
+              suggestions and keep writing. I want the alternatives to remain
+              available because synthesis can discard something that mattered.
+            </p>
+          </section>
+        </div>
+        <div class="about-notes">
+          <section>
+            <h2>Where the writing goes</h2>
+            <p>
+              Drafts are saved in this browser. A continuation request sends the
+              draft to the app server; only bounded text around the cursor,
+              style guidance, and retrieved excerpts go to the model provider.
+              The profile’s retrieval index and provider credentials stay on the
+              server. The current example uses Qwen for candidates and DeepSeek
+              for refinement through OpenRouter.
+            </p>
+          </section>
+          <section>
+            <h2>What I’m still trying to understand</h2>
+            <p>
+              Five continuations can repeat the same assumption. A refinement
+              can quietly remove a qualification. I’d like to test whether
+              seeing the alternatives and their context helps a writer notice
+              those changes. The pipeline makes this question easier to examine;
+              it does not establish that the model understands the person using
+              it.
+            </p>
+          </section>
+        </div>
+        <footer class="about-footer">
+          <a href="#writing" class="back-to-writing"
+            >Back to writing <span aria-hidden="true">↗</span></a
+          >
+          <p>
+            AI-assisted writeup · More of my writing at
+            <a
+              href="https://cassie.mccoy.world"
+              target="_blank"
+              rel="noopener noreferrer"
+              >cassie.mccoy.world</a
+            >
+          </p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

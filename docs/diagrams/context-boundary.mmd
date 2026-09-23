@@ -1,0 +1,23 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'Arial', 'fontSize': '16px', 'lineColor': '#78836f', 'edgeLabelBackground': '#faf9f5', 'clusterBkg': '#f6f5ef', 'clusterBorder': '#c8cfc0', 'primaryTextColor': '#2d382c'}}}%%
+flowchart TB
+    subgraph Local["ON YOUR COMPUTER"]
+      Corpus["Your chosen passages<br/>and approved facts"] --> Index["Local embedding model<br/>and a reusable memory index"]
+      Text["Draft and cursor position"] --> Context["A bounded context package"]
+      Index --> Context
+      Style["Your style guidance"] --> Context
+      Returned["Candidates, refinement,<br/>and retrieved excerpts"] --> Writer["Human review"]
+      Writer -->|Explicit acceptance| Saved["Draft saved in this browser"]
+    end
+    subgraph External["MODEL PROVIDERS"]
+      Candidates["Candidate model"] --> Synthesis["Synthesis model"]
+    end
+    Context -->|"Nearby draft text, style,<br/>and selected excerpts"| Candidates
+    Context -->|"The same context"| Synthesis
+    Candidates --> Returned
+    Synthesis --> Returned
+    classDef paper fill:#fdfcf8,stroke:#bbc3b0,color:#2d382c;
+    classDef green fill:#e4eadc,stroke:#91a17f,color:#33452a;
+    classDef rust fill:#f2e4db,stroke:#ad6a4b,color:#723c24;
+    class Corpus,Index,Text,Context,Style,Saved paper;
+    class Candidates,Synthesis green;
+    class Returned,Writer rust;
